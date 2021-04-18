@@ -1,0 +1,25 @@
+Xilinx Zynq MP First Stage Boot Loader
+Release 2020.1   Apr 17 2021  -  23:17:32
+NOTICE:  ATF running on XCZU3EG/silicon v4/RTL5.1 at 0x10000
+NOTICE:  BL31: v2.2(release):xilinx-v2020.1
+NOTICE:  BL31: Built : 22:30:36, Apr 17 2021
+
+
+U-Boot 2021.04-00002-g4064493757-dirty (Apr 17 2021 - 22:35:42 -0400)
+
+Model: ZynqMP UltraZed EG
+Board: Xilinx ZynqMP
+DRAM:  2 GiB
+PMUFW:  v1.1
+EL Level:       EL2
+Chip ID:        zu3eg
+WDT:   Not found!
+NAND:  0 MiB
+MMC:
+In:    serial
+Out:   serial
+Err:   serial
+Bootmode: SD_MODE1
+Boot from SD1 but without SD1 enabled!
+initcall sequence 000000007ffa3240 failed at call 0000000008004e3c (err=-1)
+### ERROR ### Please RESET the board ###
