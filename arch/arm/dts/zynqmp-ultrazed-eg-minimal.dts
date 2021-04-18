@@ -39,9 +39,31 @@
 };
 
 	&uart0 {
+		u-boot,dm-pre-reloc;
+		compatible = "cdns,uart-r1p12", "xlnx,xuartps";
 		status = "okay";
-	};
+		interrupt-parent = <&gic>;
+		interrupts = <0 21 4>;
+		reg = <0x0 0xff000000 0x0 0x1000>;
+		clock-names = "uart_clk", "pclk";
+		power-domains = <&zynqmp_firmware 33>;
+		cts-override;
+		device_type = "serial";
+		port-number = <0>;
+		clocks = <&zynqmp_clk 56>, <&zynqmp_clk 31>;
+  };
 
-	&uart1 {
+  &uart1 {
+		u-boot,dm-pre-reloc;
+		compatible = "cdns,uart-r1p12", "xlnx,xuartps";
 		status = "okay";
+		interrupt-parent = <&gic>;
+		interrupts = <0 22 4>;
+		reg = <0x0 0xff010000 0x0 0x1000>;
+		clock-names = "uart_clk", "pclk";
+		power-domains = <&zynqmp_firmware 34>;
+		cts-override ;
+		device_type = "serial";
+		port-number = <1>;
+		clocks = <&zynqmp_clk 57>, <&zynqmp_clk 31>;
 	};
