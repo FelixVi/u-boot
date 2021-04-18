@@ -337,17 +337,17 @@ int env_init(void)
 		      drv->name, ret);
 	}
 
-	if (!prio)
-		return -ENODEV;
+//	if (!prio)
+//		return -ENODEV;
 
-	if (ret == -ENOENT) {
+//	if (ret == -ENOENT) {
 		gd->env_addr = (ulong)&default_environment[0];
-		gd->env_valid = ENV_VALID;
+		gd->env_valid = ENV_INVALID;
 
 		return 0;
-	}
+//	}
 
-	return ret;
+//	return ret;
 }
 
 int env_select(const char *name)
