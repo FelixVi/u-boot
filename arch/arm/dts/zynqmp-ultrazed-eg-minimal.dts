@@ -1,0 +1,47 @@
+// SPDX-License-Identifier: GPL-2.0+
+/*
+ * dts file for Xilinx ZynqMP ZCU100 revC
+ *
+ * (C) Copyright 2016 - 2020, Xilinx, Inc.
+ *
+ * Michal Simek <michal.simek@xilinx.com>
+ * Nathalie Chan King Choy
+ */
+
+/dts-v1/;
+
+#include "zynqmp.dtsi"
+#include "zynqmp-clk-ccf.dtsi"
+#include <dt-bindings/input/input.h>
+#include <dt-bindings/interrupt-controller/irq.h>
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/phy/phy.h>
+
+/ {
+	model = "ZynqMP UltraZed EG";
+	compatible = "xlnx,zynqmp";
+
+	aliases {
+		serial0 = &uart0;
+		serial1 = &uart1;
+		mmc1 = &sdhci1;
+	};
+
+	chosen {
+		bootargs = "rootwait earlycon clk_ignore_unused console=ttyPS0,115200 earlyprintk cpuidle.off=1 root=/dev/mmcblk1p2 rw";
+		stdout-path = "serial0:115200n8";
+	};
+
+	memory@0 {
+		device_type = "memory";
+		reg = <0x0 0x0 0x0 0x80000000>;
+	};
+};
+
+	&uart0 {
+		status = "okay";
+	};
+
+	&uart1 {
+		status = "okay";
+	};
